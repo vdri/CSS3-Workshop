@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+  <head>
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]-->
+    <meta charset="utf-8" />
+    <title>Media Queries - CSS: From Knowledgable to Ninja</title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (orientation: portrait) {
+
+	body, #presentation, #slides{
+	background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+
+	body, #presentation, #slides{
+	background: palegoldenrod;
+	}
+}
+
+.scrollbar { height: 500px; overflow:auto;}
+
+	::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #bdd9d5;
+	border-radius: 6px;
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: #C7573A;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    -webit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #b7472A;
+}
+
+
+
+/* brown: C7573A;*/
+   </style>
+
+  </head>
+  <body>
+    <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+            <li class="button home" id="home"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+  <div id="topinfo"></div>
+
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+<!-- intro -->
+
+<!-- section title -->
+<div class="slide intro">
+     <header><h1>Part 5:<br>Media Queries</h1></header>
+     <section class="content">(briefly)</section>
+</div>
+
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+	<header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet' type='text/css'
+    <b>media='screen'</b> href='css/styles.css' /&gt;
+
+&lt;link rel='stylesheet' type='text/css'
+    <b>media='print'</b> href='css/print.css' /&gt</pre>
+  <pre contenteditable><b>@media screen {</b>
+  p {
+    color: blue;
+  }
+<b>}
+
+@media print</b> {
+  p {
+    color: red;
+  }
+<b>}</b>
+  </pre>
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie">IE 5</li>
+     </ul>
+    </section>
+</div>
+
+<!-- media queries: v 2.1 -->
+<div class="slide normal">
+	<header><h1>10 Media Queries (2.1)</h1></header>
+    <section class="content">
+    <ol style="float:left; margin-right: 20px;">
+    <li>all</li>
+    <li>aural</li>
+    <li>handheld</li>
+    <li>braille</li>
+    <li>embossed</li>
+    <li>print</li>
+    <li>projection</li>
+    <li>screen</li>
+    <li>tty</li>
+    <li>tv</li>
+    </ol>
+    <div style="float:left">
+<pre contenteditable>
+&lt;link media="screen" ...
+</pre>
+<pre contenteditable>
+&lt;style&gt; @import "myCSS.css"; ...
+</pre>
+<pre contenteditable>
+@import url(myCSS.css) screen; IE8+
+</pre>
+<pre contenteditable>
+@media screen {}
+</pre>
+<pre contenteditable>
+&lt;?xml-stylesheet media="screen" ...
+</pre>
+    </div>
+    </section>
+</div>
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+	<header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet'
+<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre>
+  <pre contenteditable><b>@media screen and (max-width: 480px)</b>{
+  a {
+    transition: background-color 200ms linear 50ms;
+  }
+<b>}
+
+@media screen and (orientation: landscape)</b> {
+  a[href^="mailto:]:before {
+    content: url(icons/email.gif);
+  }
+<b>}</b>
+  </pre>
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.5</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 9.5</li>
+        <li class="ie ">IE 9</li>
+     </ul>
+    </section>
+</div>
+
+
+
+
+
+
+<!-- media queries: v 3 -->
+<div class="slide normal">
+<section class="content"><ul>
+<li><em>(min/max)-width:</em> viewport width</li>
+<li><em>(min/max)-height:</em> viewport height</li>
+<li><em>(min/max)-device-width:</em> screen width</li>
+<li><em>(min/max)-device-height:</em> screen height</li>
+<li><em>orientation:</em> portrait(h>w) | landscape(w>h)</li>
+<li><em>(min/max)-aspect-ratio:</em> width/height</li>
+<li><em>(min/max)-device-aspect-ratio:</em> device-width/height</li>
+</ul>
+</section>
+<ul style="margin:-20px 20px; opacity: 0.3">
+<li><em>(min/max)-color:</em> </li>
+<li><em>(min/max)-color-index:</em> </li>
+<li><em>(min/max)-monochrome:</em> 0 | 1+</li>
+<li><em>(min/max)-resolution:</em> 72dpi | 100dpcm</li>
+<li><em>scan:</em> progressive | interlace (tv) </li>
+<li><em>grid:</em> 0 | 1 (grids (like tty) or bitmap)</li>
+<li>See <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">Media Queries Spec</a></li>
+</ul>
+
+</div>
+
+<!-- media queries: tidbits -->
+<div class="slide">
+	<header><h1>Media Query Syntax/Punctuation</h1></header>
+    <section class="content">
+    <pre contenteditable>media="<b>only</b> print and (color)"
+
+media="only screen <b>and</b> (orientation: portrait)"
+
+media="<b>not</b> screen and (color)"
+
+media="print<b>,</b> screen and (min-width: 480px)"</pre>
+ </section>
+</div>
+
+<!-- media queries: tidbits -->
+<div class="slide">
+  <header><h1>Device and Capability Detection</h1></header>
+    <section class="content">
+
+
+    <pre contenteditable>@media screen and (<b>-webkit-min-device-pixel-ratio</b>: 2) {
+ .iphone4 { /* high DPI */}
+}</pre>
+<pre contenteditable>
+@media screen and (<b>transform-3d</b>) {
+  .transforms {}
+}</pre>
+<pre contenteditable>
+@media screen and (min-width: 320px) and (max-width: 500px){
+  @-ms-viewport { width: device-width;}
+}
+</pre>
+<p>Also works with <code>(-prefix-animation)</code> and <code>(-prefix-transition)</code></p>
+    </section>
+</div>
+
+<div class="slide object">
+  <object data="files/40_supports.html"></object>
+  <a href="files/40_supports.html" class="objectlink" target="_new">Visit Site</a>
+ </div>
+
+<div class="slide object">
+  <object data="http://jsfiddle.net/estelle/m5Qeh/"></object>
+  <a href="http://jsfiddle.net/estelle/m5Qeh/" class="objectlink" target="_new">Visit Site</a>
+ </div>
+
+
+<!-- media queries: Slide deck example -->
+<div class="slide" id="mediaqueryeffect">
+      <header>
+         <h1>Play with presentation window size
+         </h1>
+      </header>
+      <section class="content">
+
+<pre contenteditable>body {
+	-&lt;prefix&gt;-transition: all 1.5s linear;
+}
+@media only screen and (orientation: portrait) {
+	body{
+	  background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+	body{
+	  background: palegoldenrod;
+	}
+}</pre>
+
+ <p><small>shrink this window to see the presentation change colors</small></p>
+      </section>
+  </div>
+
+<!-- mediaqueri.es -->
+ <div class="slide" style="padding:0; overflow:hidden;">
+<object data="http://mediaqueri.es/" style="height: 780px;
+width: 940px;
+overflow:hidden; ">
+     </object>
+</div>
+
+
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+  <header><h1>Viewport</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;meta name="<strong>viewport</strong>" content="<strong>width</strong>=device-width,
+            <strong>initial-scale</strong>=1, <strong>maximum-scale</strong>=1"/&gt;</pre>
+    <dl class="deprecated">
+      <dt>width</dt>
+      <dd>Size of the viewport in number of pixels or <code>device-width</code> (width of screen)<dd>
+      <dt>height</dt>
+      <dd>Height of the viewport in number of pixels or <code>device-height</code> (height of screen)<dd>
+      <dt>initial-scale
+      <dd>zoom level when  page is first loaded</dd>
+      <dt>maximum-scale</dt>
+      <dt>minimum-scale</dt>
+      <dt>user-scalable</dt>
+      <dd>Are users  allowed to zoom the page</dd>
+    </dl>
+  <pre contenteditable>@viewport {
+  width: device-width; zoom: 0.5;
+}</pre>
+ <dl class="deprecated">
+  <dt>min-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-width</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>width</dt>
+  <dt>min-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>max-height</dt>
+  <dd>‘auto’, ‘device-width’, ‘device-height’, an absolute length, or a percentage as specified</dd>
+  <dt>height</dt>
+  <dt>zoom</dt>
+  <dd>auto, positive number or percentage</dd>
+  <dt>min-zoom</dt>
+  <dd>Minimum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>max-zoom</dt>
+  <dd>Maximum zoom factor allowed. auto, positive number or percentage</dd>
+  <dt>user-zoom</dt>
+  <dd>zoom or fixed. User can or can't zoom in/out.</dd>
+  <dt>orientation</dt>
+  <dd>auto, portrait or landscape.</dd>
+  </dl>
+  <pre contenteditable>@media screen and (max-width:400px) {
+  @-ms-viewport { width:320px; // or device-width;}
+}</pre>
+</section>
+</div>
+
+
+<div class="slide intro">
+     <header><h1>Part 6: Colors</h1></header>
+    <h1><a href="part_06_colors.html">Next ➹</a></h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script src="slides.js"></script>
+  </body>
+</html>

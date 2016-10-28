@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <!--[if gte IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <![endif]-->
+    <meta charset="utf-8" />
+    <title>CSS3: From Knowledgable to Ninja</title>
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="css/screen.css" media="projection, screen"/>
+   <link rel="stylesheet" href="css/print.css" media="print"/>
+   <style>
+
+body, #presentation, #slides {
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 1.5s linear;
+	-o-transition: all 1.5s linear;
+	transition: all 1.5s linear;
+}
+body {counter-reset: sections;}
+header h1.sectiontitle:before{
+	content: "Part " counter(sections) ": ";
+	counter-increment: sections;
+}
+
+
+.completed:after{
+  content: '✔';
+  position: absolute; top: 40px; right: 40px;
+  color: green;
+  font-size: 96px;
+  border: 10px solid green;
+  border-radius: 50%;
+  width: 1em; height: 1em;
+  line-height: 1em;
+  text-align: center;
+}
+
+#back,#next{display: none;}
+
+/* brown: C7573A;*/
+   </style>
+
+  </head>
+  <body>
+
+  <div id="topinfo">
+
+  </div>
+  <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+  <div id="presentation">
+
+   <div id="presentation-counter"></div>
+
+   <div id="slides">
+
+<!-- OUTLINE -->
+<div class="slide normal"> 
+ <header><h1>Course Outline</h1></header> 
+ <section class="content"> 
+  <ol><li><a href="part_01_selectors.html">Selectors</a></li>
+    <li><a href="part_02_specificity.html">Specificity</a></li>
+    <li><a href="part_03_generated.html">Generated Content</a></li>
+    <li><a href="part_04_media.html">Media Queries</a></li>
+    <li><a href="part_05_debugging.html">Debugging</a></li>
+    <li><a href="part_06_colors.html">Colors &amp; Transparency </a></li>
+    <li><a href="part_07_fonts.html">Fonts / Typography </a></li>
+    <li><a href="part_08_backgrounds.html">Backgrounds &amp; Borders </a></li>
+    <li><a href="part_09_gradients.html">Gradients</a></li>
+    <li><a href="part_10_transforms.html">Transforms</a></li>
+    <li><a href="part_11_animations.html">Transitions &amp; Animation</a></li>
+<li><a href="part_12_features.html">Other Features</a></li>
+</ol>
+ </section>
+</div>
+
+
+  </div>
+  <script src="slides.js"></script>
+  </body>
+</html>
